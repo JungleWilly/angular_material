@@ -7,8 +7,14 @@
       <br />
       <!-- <input type="text" formControlName="input" /> <br /><br /> -->
       <mat-form-field>
-        <input matInput type="text" formControlName="input" /> </mat-form-field
-      ><br /><br />
+        <mat-placeholder>Email</mat-placeholder>
+        <input matInput type="text" formControlName="email" />
+        <mat-hint align="end">{{ form.get("email").value.length}/10}</mat-hint>
+        <mat-error *ngIf="form.get('email').invalid">{{
+          getError()
+        }}</mat-error>
+      </mat-form-field>
+      <br /><br />
 
       <!-- <input type="checkbox" formControlName="checkbox" /><br />
       <br /> -->
