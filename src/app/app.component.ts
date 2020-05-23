@@ -22,6 +22,9 @@ export class AppComponent implements OnInit {
       checkbox: [''],
       radio: [''],
       slidetoggle: [''],
+      select: [''],
+      range: [''],
+      date: [''],
     });
   }
 

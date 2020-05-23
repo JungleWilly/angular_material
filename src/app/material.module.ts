@@ -6,6 +6,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import 'hammerjs/hammer';
 
 const MATERIAL = [
   MatButtonModule,
@@ -14,6 +19,10 @@ const MATERIAL = [
   MatInputModule,
   MatRadioModule,
   MatSlideToggleModule,
+  MatSelectModule,
+  MatSliderModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 ];
 
 @NgModule({
