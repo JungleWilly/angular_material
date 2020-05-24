@@ -5,6 +5,8 @@ import {
   FormControl,
   FormBuilder,
 } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,8 @@ import {
 })
 export class AppComponent implements OnInit {
   public form: FormGroup;
+  public options: string[] = ['One', 'Two', 'Three'];
+  public filterOptions: Observable<string[]>;
 
   constructor(private fb: FormBuilder) {}
 
@@ -25,7 +29,21 @@ export class AppComponent implements OnInit {
       select: [''],
       range: [''],
       date: [''],
+      auto: [''],
     });
+
+    this.filterOptions = this.form.get('auto').valueChanges.pipe(
+      startWith(null),
+      map((val) => {
+        if (!val) {
+          return this.options;
+        } else {
+          return this.options.filter((option) => {
+            return option.toLowerCase().startsWith(val.toLowerCase());
+          });
+        }
+      })
+    );
   }
 
   public getError(): string {
