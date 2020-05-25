@@ -11,6 +11,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import 'hammerjs/hammer';
 
 const MATERIAL = [
@@ -25,6 +27,8 @@ const MATERIAL = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatAutocompleteModule,
+  MatMenuModule,
+  MatSidenavModule,
 ];
 
 @NgModule({

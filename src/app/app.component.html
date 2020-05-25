@@ -1,11 +1,14 @@
-<div class="container-fluid">
+<!-- 
+  ///////////////////// FORM ////////////////
+  
+  <div class="container-fluid">
   <h1 class="col-12">Material</h1>
   <div class="row">
     <h3 class="col-12">Formulaire :</h3>
     <form [formGroup]="form" class="col-6 mx-auto">
       <br />
       <br />
-      <!-- <input type="text" formControlName="input" /> <br /><br /> -->
+
       <mat-form-field>
         <mat-placeholder>Email</mat-placeholder>
         <input matInput type="text" formControlName="email" />
@@ -16,14 +19,9 @@
       </mat-form-field>
       <br /><br />
 
-      <!-- <input type="checkbox" formControlName="checkbox" /><br />
-      <br /> -->
 
       <mat-checkbox formControlName="checkbox">Vrai/Faux</mat-checkbox><br />
       <br />
-
-      <!-- <input type="radio" value="Femme" formControlName="radio" />Femme <br /> -->
-      <!-- <input type="radio" value="Homme" formControlName="radio" />Homme <br /><br /> -->
 
       <mat-radio-group formControlName="radio">
         <mat-radio-button value="Femme">Femme</mat-radio-button>
@@ -39,13 +37,6 @@
       </mat-slide-toggle>
       <br /><br />
 
-      <!-- <select formControlName="select">
-        <option value=""></option>
-        <option value="pain">Pain</option>
-        <option value="pate">Pate</option>
-        <option value="pizza">Pizza</option>
-      </select>
-      <br /><br /> -->
 
       <mat-form-field>
         <mat-select formControlName="select" placeholder="food">
@@ -56,12 +47,10 @@
       </mat-form-field>
       <br /><br />
 
-      <!-- <input type="range" min="0" max="10" formControlName="range" /> -->
 
       <mat-slider min="0" max="10" formControlName="range"></mat-slider>
       <br /><br />
 
-      <!-- <input type="date" formControlName="date" /> -->
 
       <mat-form-field>
         <input
@@ -97,4 +86,45 @@
       <pre>{{ form.value | json }}</pre>
     </form>
   </div>
-</div>
+</div> 
+
+///////////////////////////////////////////////////
+-->
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <button mat-button>dans nav</button>
+  </mat-sidenav>
+
+  <div class="container-fluid">
+    <h1 class="col-12">Material</h1>
+    <div class="row">
+      <h3 class="col-12">NAVIGATION :</h3>
+      <div class="col-6 mx-auto">
+        <button mat-button>hello</button> <br /><br />
+        <button mat-raised-button color="warn" (click)="sidenav.open()">
+          primary
+        </button>
+        <button mat-raised-button color="primary" [MatMenuTriggerFor]="menu">
+          primary
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [MatMenuTriggerFor]="menu2">1</button>
+          <button mat-menu-item>2</button>
+          <button mat-menu-item>3</button> </mat-menu
+        ><br /><br />
+
+        <mat-menu #menu2="matMenu">
+          <button mat-menu-item>4</button>
+          <button mat-menu-item>5</button>
+          <button mat-menu-item>6</button> </mat-menu
+        ><br /><br />
+
+        <!-- <button mat-raised-button color="accent">accent</button> <br /><br />
+      <button mat-raised-button color="warn">warn</button> <br /><br />
+      <button mat-raised-button disabled>disabled</button> <br /><br />
+      <button mat-fab>hello3</button> <br /><br />
+      <button mat-mini-fab>hello4</button> <br /><br /> -->
+      </div>
+    </div>
+  </div>
+</mat-sidenav-container>
